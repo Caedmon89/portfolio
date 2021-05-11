@@ -1,0 +1,127 @@
+/*
+  BUTTONS
+*/
+
+.btn {
+  padding: 0;
+  margin: 0;
+  background: 0;
+  border: 0;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+
+.btn-menu {
+  width: 50px;
+  height: 50px;
+  display: block;
+
+  @media screen and (min-width: $screen-md) {
+    display: none;
+  }
+
+  [class^='trait-'] {
+    position: absolute;
+    width: calc(100% - 20px);
+    height: 2px;
+    background: $primary;
+    left: 10px;
+  }
+
+  .trait-1 {
+    top: 16px;
+    transition: transform .2s ease;
+  }
+
+  .trait-2 {
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    transition: opacity .2s ease;
+  }
+
+  .trait-3 {
+    bottom: 16px;
+    transition: transform .2s ease;
+  }
+
+  &.open {
+    .trait-1 {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .trait-2 {
+      opacity: 0;
+    }
+
+    .trait-3 {
+      top: 50%;
+      bottom: inherit;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+}
+
+.scroll {
+
+  .btn-menu {
+    [class^='trait-'] {
+      background: $primary;
+    }
+  }
+
+  .btn-dark {
+    color: $black;
+  }
+}
+
+.btn-resume {
+  position: absolute;
+  @include vertical-center;
+  right: 20px;
+  color: $primary;
+  font-size: 1.5rem;
+  width: 24px;
+  height: 24px;
+  transition: transform .1s ease;
+
+  @media screen and (min-width: $screen-md) {
+    display: none;
+  }
+
+  &.active {
+    transform: scale(-1) translateY(50%);
+  }
+}
+
+.btn-work {
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: 1px solid rgba($grey, .5);
+  background: $white;
+  padding: 20px 40px;
+  position: relative;
+
+  svg {
+    margin-left: 10px;
+  }
+}
+
+.btn-dark {
+  height: 30px;
+  width: 30px;
+  margin: 0 30px 0 0;
+  color: $grey;
+  background: $white;
+  border-radius: 50%;
+
+  &.active {
+    color: $primary;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    margin: 0 0 0 20px;
+  }
+}

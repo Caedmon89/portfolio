@@ -1,0 +1,49 @@
+@import './vars';
+
+/*
+  LFG
+*/
+
+.container-lfg {
+  max-width: calc(100% - 30px);
+  width: 100%;
+  border: 1px solid transparent;
+  margin: -80px 15px -40px;
+  background: $white;
+  border-radius: 20px;
+  padding: 20px 30px;
+  box-shadow: 5px 5px 20px 0px rgba(0,0,0,.1);
+  transform: translateY(-50%);
+
+  @media screen and (min-width: $screen-md) {
+    max-width: 760px;
+    margin: -80px auto 00;
+    padding: 30px 40px;
+  }
+}
+
+.title-lfg {
+  font-size: 1.5rem; // 24px
+  line-height: 2.125rem; // 34px
+  text-transform: uppercase;
+  color: $primary;
+}
+
+.text-lfg {
+  font-size: 1rem; // 16px
+  line-height: 1.5625rem; // 25px
+  color: $grey;
+
+  @media screen and (min-width: $screen-sm) {
+    font-size: 1.125rem; // 18px
+    line-height: 1.9375rem; // 31px  
+  }
+}
+
+.dark {
+
+  .container-lfg {
+    background: $background-dark-lighter;
+    border: 1px solid rgba(255, 255, 255, .1);
+  }
+}

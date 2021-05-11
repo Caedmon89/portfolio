@@ -1,0 +1,30 @@
+@import './vars';
+@import './reset';
+@import './utilities';
+@import './titles';
+@import './_button';
+
+.container {
+  max-width: 1140px;
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-full {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.container + .container {
+  margin-top: 40px;
+
+  @media screen and (min-width: $screen-sm) {
+    margin-top: 80px;
+  }
+}
+
+.container + .container-full {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}

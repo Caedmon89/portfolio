@@ -1,0 +1,205 @@
+/*
+  UTILITIES
+*/
+
+// ALIGN
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+// FONT WEIGHT
+
+.font-300,
+.font-light {
+  font-weight: 300;
+}
+
+.font-400,
+.font-regular {
+  font-weight: 400;
+}
+
+.font-700,
+.font-bold {
+  font-weight: 700;
+}
+
+// FLOAT
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+.f-none {
+  float: none;
+}
+
+// TEXT-TRANSFORM
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-transform-n {
+  text-transform: none;
+}
+
+// DISPLAY
+
+.d-block {
+  display: block;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+// JUSTIFY
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-stretch {
+  justify-content: stretch;
+}
+
+// ALIGN-ITEMS
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+// MARGINS
+
+.m-left-auto {
+  margin-left: auto;
+}
+
+.m-right-auto {
+  margin-right: auto;
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+// COLORS
+
+$colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'grey': $grey,
+  'light-grey': $light-grey,
+  'yellow': $yellow,
+  'blue': $blue,
+  'background-dark': $background-dark,
+  'background-dark-lighter': $background-dark-lighter,
+  'white': $white,
+  'black': $black
+);
+
+@mixin colors {
+  @each $color, $name in $colors {
+    &-#{$color} {
+      color: $name;
+    }
+  }
+}
+
+.color {
+  @include colors;
+}
+
+// BACKGROUND
+
+@mixin backgrounds {
+  @each $background, $name in $colors {
+    &-#{$background} {
+      background: $name;
+    }
+  }  
+}
+
+.background {
+  @include backgrounds;
+}
+
+// VERTICAL CENTER
+
+@mixin vertical-center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// TEXT-SHORTEN
+
+@mixin text-shorten {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dark {
+
+  .background-light-grey {
+    background: $background-dark-lighter;
+  }
+}

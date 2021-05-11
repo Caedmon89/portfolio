@@ -1,0 +1,239 @@
+@import './vars';
+
+/*
+  RESUME
+*/
+
+.container-resume {
+  width: 100%;
+  position: relative;
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.formation,
+.exp {
+  max-width: 100%;
+  width: 100%;
+
+  @media screen and (min-width: $screen-md) {
+    max-width: calc(50% - 30px);
+  }
+}
+
+.formation {
+  margin-bottom: 40px;
+
+  @media screen and (min-width: $screen-md) {
+    margin-bottom: 0;
+  }
+}
+
+.title-resume {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: $white;
+  padding: 20px;
+  color: $black;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  
+  .icon {
+    font-size: 1.125rem; // 18px
+    color: $white;
+    background: $blue-to-purple-gradient;
+    border-radius: 50%;
+    line-height: 38px;
+    text-align: center;
+  }
+
+  h3 {
+    padding-left: 10px;
+    width: calc(100% - 40px);
+  }
+}
+
+// SKILLS
+.container-competence {
+  margin-top: 40px;
+  width: 100%;
+  padding: 20px 20px 15px;
+  border-radius: 10px;
+  background: $secondary;
+  color: $white;
+}
+
+.skills-code,
+.skills-pao {
+  width: 100%;
+
+  @media screen and (min-width: $screen-md) {
+    width: calc(50% - 30px);
+  }
+}
+
+.code-list,
+.pao-list {
+  width: 100%;
+  columns: 2;
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  img {
+    max-width: 16px;
+    margin-top: -5px;
+  }
+}
+
+.skills-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 10px;
+  padding: 10px 0 0;
+  border-top: 1px solid rgba($white, .15);
+}
+
+.icon-skills {
+  display: inline-block;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  line-height: 25px;
+  background: $white;
+  color: $secondary;
+  border-radius: 50%;
+}
+
+.step-resume {
+  width: 100%;
+  padding: 0 10px 20px 20px;
+  margin-top: 20px;
+  position: relative;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  &:before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background: $blue-to-purple-gradient-bottom;
+    position: absolute;
+    top: 0;
+    left: 6px;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    display: block;
+  }
+}
+
+.date {
+  font-family: $font-secondary;
+  font-size: 1rem; // 16px
+  margin-bottom: 20px;
+
+  &:after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: $white;
+    border: 3px solid $secondary;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -20px;
+  }
+}
+
+.step-title {
+  font-size: 1.25rem; // 20px
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.step-description {
+  font-size: 1rem; // 16px
+  line-height: 1.625rem; // 26px
+  color: $grey;
+}
+
+.list-resume {
+  padding: 10px 0 0 30px;
+  position: relative;
+  width: 100%;
+
+  &-item {
+    font-size: 0.875rem; // 14px
+    line-height: 1.625rem; // 26px
+    position: relative;
+
+    &:before {
+      content: '\2014';
+      color: $secondary;
+      position: absolute;
+      left: -20px;
+      top: 0;
+    }
+  }
+}
+
+.step {
+  position: relative;
+
+  + .step {
+    margin-top: 40px;
+  }
+}
+
+.resume-link {
+  padding-top: 40px;
+
+  a {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 20px 40px;
+    border: 1px solid rgba($grey, .5);
+    text-transform: uppercase;
+    position: relative;
+    transition: color .2s ease;
+
+    &:hover,
+    &:focus {
+      background: $blue-to-purple-gradient;
+      color: $white;
+      border: 1px solid $white;
+    }
+  }
+
+  svg {
+    margin-left: 10px;
+  }
+}
+
+.dark {
+
+  .title-resume {
+    background: $background-dark-lighter;
+    color: $white;
+    border: 1px solid rgba(255, 255, 255, .1);
+  }
+}

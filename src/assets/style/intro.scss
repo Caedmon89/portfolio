@@ -1,0 +1,75 @@
+@import './vars';
+
+/*
+  INTRO
+*/
+
+.presentation {
+  background: url('https://source.unsplash.com/WSvth_lwCi0/1920x600') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 80px;
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: $screen-sm) {
+    height: 600px;
+    margin-bottom: 80px;
+  }
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $blue-to-purple-gradient;
+    opacity: .85;
+    z-index: 0;
+  }
+
+  h1,
+  p {
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 1;
+  }
+
+  h1 {
+    letter-spacing: 2px;
+  }
+
+  p {
+    padding-top: 10px;
+    font-size: 1.125rem; // 18px
+    letter-spacing: 10px;;
+
+    @media screen and (min-width: $screen-sm) {
+      font-size: 1.5rem; // 24px
+    }
+  }
+
+  .tags {
+    display: inline-block;
+    max-width: calc(100% - 30px);
+    font-size: 0.75rem; // 12px
+    letter-spacing: 0;
+    border: 1px solid rgba($white, .5);
+    padding: 10px;
+    margin-top: 15px;
+    color: $white;
+    z-index: 1;
+
+    @media screen and (min-width: $screen-sm) {
+      font-size: 0.875rem; // 14px
+    }
+  }
+}
